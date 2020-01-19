@@ -18,7 +18,7 @@ exports.setupWebSocket = (server) => {
                 latitude: Number(latitude),
                 longitude: Number(longitude),
             },
-            techs: parseStringAsArray(techs)
+            techs: parseStringAsArray(techs.toLowerCase())
         });
 
     });
