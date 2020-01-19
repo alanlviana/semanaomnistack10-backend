@@ -7,7 +7,7 @@ module.exports = {
         // filtrar por tecnologia
         const {latitude, longitude, techs} =  request.query;
 
-        const techsArray = parseStringAsArray(techs);
+        const techsArray = parseStringAsArray(techs.toLowerCase());
 
         const devs = await Dev.find({
             techs:{
