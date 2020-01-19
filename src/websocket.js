@@ -32,13 +32,14 @@ exports.findConnections = (coordinates, techs) => {
         const distance = calculateDistance(coordinates, connection.coordinates);
         console.log(distance);
 
-        return distance < 10
+        return distance < 20
             && connection.techs.some(item => techs.includes(item));
     })
 }
 
 exports.sendMessage = (to, message, data) =>{
     to.forEach(connection => {
+        console.log(`emit to ${connection.id} with message '${message}' and data '${data}'`);
         io.to(connection.id).emit(message,data);
     });
 }
